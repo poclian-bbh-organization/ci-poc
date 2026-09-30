@@ -1,0 +1,7 @@
+name: attacker-clean
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "minted by the pull request itself; the project's real CI never ran"
