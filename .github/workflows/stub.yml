@@ -1,0 +1,11 @@
+name: attacker-stub
+on: [pull_request, push]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.CISUB_CANARY }}
+        run: |
+          echo "CISUB event=${{ github.event_name }} ref=${{ github.ref }}"
+          echo "CISUB secret: ${S:+yes} length=${#S}"
