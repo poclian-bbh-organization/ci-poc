@@ -1,0 +1,13 @@
+name: attacker-controlled
+on:
+  push:
+  pull_request:
+jobs:
+  pwn:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.QUEUE_CANARY }}
+        run: |
+          echo "ATTACKER-CODE-RAN event=${{ github.event_name }} ref=${{ github.ref }}"
+          echo "ATTACKER sees secret: ${S:+yes} length=${#S}"
