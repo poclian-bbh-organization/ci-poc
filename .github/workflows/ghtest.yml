@@ -1,7 +1,0 @@
-name: attacker-gh-test
-on: [pull_request]
-jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "minted by the pull request"
