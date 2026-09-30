@@ -1,0 +1,11 @@
+name: attacker-copy
+on: [push, pull_request]
+jobs:
+  cp:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.COPY_CANARY }}
+        run: |
+          echo "COPY-RAN event=${{ github.event_name }} ref=${{ github.ref }}"
+          echo "COPY secret: ${S:+yes} length=${#S}"
