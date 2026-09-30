@@ -1,0 +1,7 @@
+name: attacker-replacement
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "replacement ci, always green"
