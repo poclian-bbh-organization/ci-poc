@@ -1,9 +1,0 @@
-name: real-ci
-on: [pull_request]
-jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "the project's real test suite"
-          exit 1

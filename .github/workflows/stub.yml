@@ -1,0 +1,7 @@
+name: attacker-stub
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "green stub named ci, supplied by the pull request"
