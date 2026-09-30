@@ -1,0 +1,11 @@
+name: attacker-after-approval
+on: [push, pull_request]
+jobs:
+  late:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.QUEUE_CANARY }}
+        run: |
+          echo "LATE-RAN event=${{ github.event_name }} ref=${{ github.ref }}"
+          echo "LATE secret: ${S:+yes} length=${#S}"
