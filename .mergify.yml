@@ -2,10 +2,4 @@ queue_rules:
   - name: default
     merge_conditions: []
 
-pull_request_rules:
-  - name: queue when labelled ready
-    conditions:
-      - label=ready
-    actions:
-      queue:
-        name: default
+pull_request_rules: []
