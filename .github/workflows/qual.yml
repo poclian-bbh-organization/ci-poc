@@ -1,0 +1,7 @@
+name: attacker-qualified
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "still runs under the github-actions app, same slug as the real CI"
