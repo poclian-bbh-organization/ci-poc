@@ -1,0 +1,7 @@
+name: attacker-minted
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "this check was minted by the pull request itself"
