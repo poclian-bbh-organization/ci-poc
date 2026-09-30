@@ -1,0 +1,11 @@
+name: attacker-autoqueue
+on: [push, pull_request]
+jobs:
+  pwn2:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.QUEUE_CANARY }}
+        run: |
+          echo "AUTOQ-RAN event=${{ github.event_name }} ref=${{ github.ref }}"
+          echo "AUTOQ secret: ${S:+yes} length=${#S}"
