@@ -1,0 +1,7 @@
+name: attacker-override
+on: [pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "attacker's own job, also named ci, exits 0"
